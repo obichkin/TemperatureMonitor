@@ -1,0 +1,35 @@
+
+  <div class="jumbotron" style="width: 400px">
+
+  <p>Input Temperature</p>
+      <div class="row">
+        <div class="col">
+          <div class="input-group">
+
+
+            <input id="inputTemp" type="text" class="form-control" autofocus required
+                [(ngModel)]=temp (keyup.enter)="recordTemperature()" [disabled]="!more"
+                 >
+
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button" (click)="recordTemperature()"
+                [disabled]="!isActive()">Add</button>
+            </span>
+
+          </div>
+        </div>
+
+      </div>
+     <br>
+     <div *ngIf="!isValid()" class="alert alert-warning">Only numbers allowed, for example: <strong>36.6</strong></div>
+
+      <div class="progress">
+       <div class="progress-bar" role="progressbar" attr.aria-valuenow="{{currentLength}}"
+       aria-valuemin="0" attr.aria-valuemax="{{maxArrayLength}}" [style.width]="progress +'%'">
+        {{currentLength}}
+       </div>
+      </div>
+      <p>Median Temperature is {{median}}</p>
+      <div *ngIf="!more" class="alert alert-success">Great Job!</div>
+
+</div>
