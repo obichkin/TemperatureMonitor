@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TemperatureMonitorService } from '../temperature-monitor.service';
+import { TemperatureMonitorService } from '../services/temperature-monitor.service';
 
 
 @Component({
@@ -30,7 +30,7 @@ export class TemperatureComponent implements OnInit {
   }
 
   recordTemperature() {
-    if(this.isActive()){
+    if(this.isActive() && this.temp!=""){
       console.log("temperature submitted " + this.temp);
       this.tempService.recordTemperature(Number(this.temp));
       this.median = this.tempService.getCurrentMedian();

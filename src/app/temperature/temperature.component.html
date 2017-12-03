@@ -8,8 +8,7 @@
 
 
             <input id="inputTemp" type="text" class="form-control" autofocus required
-                [(ngModel)]=temp (keyup.enter)="recordTemperature()" [disabled]="!more"
-                 >
+                [(ngModel)]=temp (keyup.enter)="recordTemperature()" [disabled]="!more">
 
             <span class="input-group-btn">
               <button class="btn btn-secondary" type="button" (click)="recordTemperature()"
@@ -24,7 +23,7 @@
      <div *ngIf="!isValid()" class="alert alert-warning">Only numbers allowed, for example: <strong>36.6</strong></div>
 
       <div class="progress">
-       <div class="progress-bar" role="progressbar" attr.aria-valuenow="{{currentLength}}"
+       <div id="progressbar" class="progress-bar" role="progressbar" attr.aria-valuenow="{{currentLength}}"
        aria-valuemin="0" attr.aria-valuemax="{{maxArrayLength}}" [style.width]="progress +'%'">
         {{currentLength}}
        </div>
