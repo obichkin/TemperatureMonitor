@@ -9,9 +9,9 @@ import { TemperatureMonitorService } from '../services/temperature-monitor.servi
 })
 export class TemperatureComponent implements OnInit {
   temp: String = "";
-  median: number;
+  median: number = 0;
   progress: number = 0;
-  currentLength: number;
+  currentLength: number = 0;
   maxArrayLength: number = 8;
   more: boolean = true;
   valid: boolean = true;

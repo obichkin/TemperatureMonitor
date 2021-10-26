@@ -18,7 +18,7 @@ export class TemperatureMonitorService {
 
     let min: number = 0;
     let max: number = this.temps.length-1;
-    let current: number;
+    let current: number = 0;
 
     while(min<=max){
       current = (min+max)/2 | 0;
